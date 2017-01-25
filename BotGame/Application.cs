@@ -12,7 +12,9 @@ namespace BotGame
     {
         private SpriteBatch _spriteBatch;
 
-        public Application()
+        public static Application Instance = new Application();
+
+        private Application()
         {
             var graphics = new GraphicsDeviceManager(this);
 
@@ -43,6 +45,17 @@ namespace BotGame
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.White);
+
+            _spriteBatch.Begin();
+
+            int w = 100;
+            int h = 100;
+
+            Texture2D t = DrawHelper.createRectangle(w, h, false);
+
+            _spriteBatch.Draw(t, new Rectangle(0, 0, w, h), Color.Blue);
+
+            _spriteBatch.End();
 
             base.Draw(gameTime);
             
