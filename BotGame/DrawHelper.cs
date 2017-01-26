@@ -32,11 +32,11 @@ namespace BotGame
 
                         if (x == 0)
                             c = Color.White;
-                        if (x == 99)
+                        if (x == height - 1)
                             c = Color.White;
                         if (y == 0)
                             c = Color.White;
-                        if (y == 99)
+                        if (y == width - 1)
                             c = Color.White;
 
                         data[x + y * width] = c;
